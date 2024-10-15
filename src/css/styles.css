@@ -1,0 +1,506 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1C;
+    color: #333;
+}
+
+header {
+    background-color: #dc143c94;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 img{
+    width: 20%;
+}
+
+nav {
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #dc143c94;
+}
+
+main {
+    padding: 2rem;
+}
+
+h2 {
+    border-bottom: 2px solid #dc143c94;
+    padding-bottom: 0.5rem;
+    color: #fff;
+}
+
+/* Estilos do menu mobile */
+
+nav.desktop-menu {
+    display: block;
+}
+
+nav#menu-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #333;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+}
+
+nav#menu-mobile ul {
+    padding: 20px;
+}
+
+nav#menu-mobile li i{
+    color: #dc143c;
+    font-size: 35px;
+}
+
+nav#menu-mobile ul li {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+nav#menu-mobile ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header  i{
+    font-size: 25px;
+    color: #fff;
+    display: none;
+}
+
+
+#overlay-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+/* Mensagens */
+
+#messages {
+    margin-top: 2rem;
+}
+
+#messages form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#messages h2 {
+    color: #fff;
+}
+
+#messages span {
+    color: #dc143c94;
+}
+
+#messages input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+#messages button.bntEnviar {
+    padding: 0.5rem;
+    border: none;
+    background-color: #dc143c94;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+#messageList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#messageList li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Estilos para os botões de editar e excluir */
+
+.editBtn, .deleteBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    gap: 30px;
+    margin-right: 10px;
+}
+
+.editBtn {
+    right: 80px;
+}
+
+.editBtn:hover, .deleteBtn:hover {
+    background-color: #0056b3;
+}
+
+.deleteBtn {
+   background-color: red;
+}
+
+.deleteBtn:hover {
+   background-color: #b61232;
+}
+
+/* Portfolio */
+
+section.portfolio .flex {
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+}
+
+section.portfolio .flex .img-port {
+    flex: 0 0 calc(25% - 20px); /* 4 imagens por vez com espaço entre elas */
+    width: 100%; /* Garante que cada imagem ocupe toda a largura do contêiner flex */
+    height: 400px; /* Altura fixa das imagens */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+section.portfolio h2 {
+    color: #fff;
+}
+
+section.portfolio span {
+    color: #dc143c94;
+}
+
+section.portfolio span i {
+    color: #fff;
+    font-size: 30px;
+}
+
+.carousel-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.carousel-controls button {
+    background-color: #dc143c94;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.carousel-controls button:hover {
+    background-color: #dc143c;
+}
+
+.img-port {
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+    text-align: center;
+}
+
+.img-port:hover .overlay {
+    opacity: 1;
+}
+
+/* Sobre */
+
+section.sobre {
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sobre .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.sobre .img-sobre {
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    overflow: hidden;
+    flex-shrink: 0; /* Evita que a imagem diminua além do necessário */
+    margin-right: 20px;
+}
+
+.sobre .img-sobre img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre .txt-sobre {
+    flex-grow: 1;
+    max-width: 50%; 
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 20px; 
+}
+
+.sobre .txt-sobre span {
+    color: #dc143c94;
+}
+
+/* Footer */
+
+footer {
+    background-color: #dc143c94;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Playlist */
+
+#playlist {
+    margin-top: 2rem;
+}
+
+#playlist h2 {
+    color: #fff;
+}
+
+#playlist h2 span {
+    color: #dc143c94;
+}
+
+#playlist ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os links */
+}
+
+#playlist li {
+    margin-bottom: 0.5rem;
+}
+
+#playlist li a {
+    color: #dc143c94;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #dc143c94;
+}
+
+#playlist li a:hover {
+    background-color: #dc143c94;
+    color: white;
+}
+
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section.portfolio .flex .img-port {
+        flex: 0 0 100%; /* Uma imagem por vez em telas pequenas */
+        height: 200px; /* Altura menor para telas pequenas */
+    }
+
+    section.sobre {
+        flex-direction: column;
+        padding: 40px 8%;
+    }
+
+    .sobre .txt-sobre {
+        max-width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .sobre .img-sobre {
+        margin-right: 0;
+    }
+    #messageList li {
+        padding: -1px;
+    }
+
+    .editBtn, .deleteBtn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 5px;
+    }
+
+    .editBtn {
+        margin-right: 0;
+    }
+
+    header h1 img{
+        width: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav.desktop-menu {
+        display: none;
+    }
+
+    header  i{
+        display: block;
+    }
+    header h1 img{
+        width: 55%;
+    }
+
+    nav#menu-mobile {
+        display: block;
+    }
+
+    #overlay-menu.ativo {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    section.portfolio .flex .img-port {
+        flex: 0 0 calc(50% - 10px); /* Duas imagens por vez em tablets */
+        height: 300px; /* Altura intermediária para tablets */
+    }
+
+    section.sobre {
+        flex-direction: column;
+        padding: 60px 8%;
+    }
+
+    .sobre .txt-sobre {
+        max-width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .sobre .img-sobre {
+        margin-right: 0;
+    }
+    #messageList li {
+        padding: 22px;
+    }
+
+    .editBtn, .deleteBtn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 5px;
+    }
+
+    .editBtn {
+        margin-right: 0;
+    }
+}
